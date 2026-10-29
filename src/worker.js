@@ -1,5 +1,5 @@
-// 관심고객 등록 → 솔라피 문자 발송 (Cloudflare Pages Function)
-// 비밀값은 Cloudflare 대시보드 > 설정 > 환경 변수(암호화)에만 저장. 페이지 코드에는 넣지 않음.
+// 관심고객 등록 → 솔라피 문자 발송 (Cloudflare Worker). 화면 파일은 public/ 에서 그대로 제공
+// 비밀값은 Cloudflare 대시보드 > Settings > Variables and Secrets(Secret)에만 저장. 페이지 코드에는 넣지 않음.
 //   SOLAPI_API_KEY, SOLAPI_API_SECRET : 솔라피 콘솔 > API Key 관리
 //   SOLAPI_SENDER  : 솔라피에 등록된 발신번호 (예: 16886189)
 //   NOTIFY_TO      : 접수 알림 받을 번호, 여러 개면 쉼표 (예: 01012345678,01098765432)
@@ -31,7 +31,7 @@ async function sendSms(env, messages) {
   return body;
 }
 
-export async function onRequestPost({ request, env }) {
+async function handleLead(request, env) {
   let p;
   try { p = await request.json(); } catch { return json({ ok: false }, 400); }
 
@@ -75,3 +75,12 @@ export async function onRequestPost({ request, env }) {
   }
   return json({ ok: true, duplicate: false, event_id: eventId, intent });
 }
+
+export default {
+  async fetch(request, env) {
+    const { pathname } = new URL(request.url);
+    if (pathname === '/api/lead') return request.method === 'POST' ? handleLead(request, env) : json({ ok: false }, 405);
+    if (pathname === '/api/track') return new Response(null, { status: 204 }); // 방문 통계 비콘 자리 — 지금은 저장하지 않음
+    return env.ASSETS.fetch(request);
+  },
+};

@@ -1,0 +1,8 @@
+{
+  "name": "arkone",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-09-01",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  // 대시보드에서 넣은 변수를 배포 때 지우지 않도록
+  "keep_vars": true
+}
