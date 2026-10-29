@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>청라 아크원 푸르지오</title>
+<meta name="description" content="청라 아크원 푸르지오 — 청라국제업무단지 M5블록, 아파트 868세대 · 오피스텔 987실, 최고 49층. 사업개요·입지·타입 안내와 관심고객 등록. 분양문의 1688-6189">
+<meta name="theme-color" content="#0B2240">
+<meta name="robots" content="noindex, nofollow"><!-- 공개 승인 전까지 검색 노출 차단. 승인 후 제거 -->
+<meta property="og:title" content="청라 아크원 푸르지오 | 청라국제업무단지 M5블록">
+<meta property="og:description" content="분양가상한제 아파트 868세대 · 84㎡ 8억대~ · 관심고객 등록 및 방문예약">
+<link rel="preload" as="image" href="assets/img/hero.webp" media="(min-width:768px)">
+<link rel="preload" as="image" href="assets/img/hero-m.webp" media="(max-width:767px)">
+<meta property="og:image" content="assets/img/hero-m.webp">
+<link rel="preload" href="assets/fonts/OJRSans-Variable-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style>.pv-note{background:#F3F0E6;color:#5B4A1E;font:500 12.5px/1.5 "OJR Sans",system-ui,sans-serif;text-align:center;padding:6px max(16px,env(safe-area-inset-left,0px))}@media (min-width:1024px){.pv-note{position:fixed;left:0;right:0;bottom:0;z-index:50}}</style>
+</head>
+<body>
+<a class="skip" href="#register">신청서로 바로가기</a>
+
+<header class="hd" id="top">
+  <div class="hd__in">
+    <a class="hd__brand" href="#hero" aria-label="청라 아크원 푸르지오 첫 화면"><span class="hd__logo">PRUGIO</span><span class="hd__name">청라 아크원 푸르지오</span></a>
+    <nav class="hd__nav" aria-label="주요 메뉴">
+      <a href="#complex" data-nav="complex">사업안내</a>
+      <a href="#benefit" data-nav="benefit">핵심가치</a>
+      <a href="#location" data-nav="location">입지환경</a>
+      <a href="#plan" data-nav="plan">세대안내</a>
+      <a href="#terms" data-nav="terms">분양일정</a>
+    </nav>
+    <a class="hd__tel js-call" href="#register" data-call-label="phone"><small>분양문의</small><span class="js-phone-text">1688-6189</span></a>
+  </div>
+</header>
+
+<main>
+  <!-- SECTION 01 · 메인 -->
+  <section class="hero" id="hero" aria-labelledby="heroTitle">
+    <picture class="hero__photo">
+      <source media="(max-width:767px)" srcset="assets/img/hero-m.webp" width="900" height="829">
+      <img class="hero__img" src="assets/img/hero.webp" width="1411" height="1300" alt="청라 아크원 푸르지오 투시도" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="hero__in">
+      <div class="hero__copy">
+        <p class="hero__eyebrow">청라국제업무단지 M5블록 · 대우건설 푸르지오</p>
+        <h1 id="heroTitle">청라 아크원<br>푸르지오</h1>
+        <dl class="hero__terms" id="heroTerms">
+          <div><dt>분양가 (84㎡)</dt><dd>8억대~</dd></div>
+          <div><dt>총 규모</dt><dd>1,855세대</dd></div>
+          <div><dt>입주</dt><dd>2031년 8월</dd></div>
+        </dl>
+        <p class="hero__sub">분양가상한제 아파트 868세대 (전용 84·103㎡)<br>계약금 5% · 중도금 60% 이자후불제 · 견본주택 10월 30일(금) 그랜드 오픈</p>
+        <p class="hero__note">※ 상기 CG는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
+      </div>
+
+      <div class="hero__form card js-card" id="quickCard">
+        <h2 class="form__title" id="quickTitle">관심고객 등록</h2>
+        <p class="form__sub">분양 일정과 타입별 조건, 견본주택 방문 일정을 안내해 드립니다.</p>
+        <form id="quickForm" class="lead-form" novalidate autocomplete="on">
+          <div class="fld">
+            <label for="q_name">성함</label>
+            <input id="q_name" name="name" type="text" autocomplete="name" maxlength="30" placeholder="성함" required>
+            <p class="err" data-f="name" role="alert"></p>
+          </div>
+          <div class="fld">
+            <label for="q_phone">연락처</label>
+            <input id="q_phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="010-0000-0000" required>
+            <p class="err" data-f="phone" role="alert"></p>
+          </div>
+          <div class="seg" role="radiogroup" aria-label="신청 유형">
+            <label><input type="radio" name="intent" value="consult" checked><span>상담 문의</span></label>
+            <label><input type="radio" name="intent" value="visit"><span>방문예약</span></label>
+          </div>
+          <div class="visit js-visit" hidden>
+            <div class="visit__row">
+              <div class="fld"><label for="q_date">방문 희망일</label><input id="q_date" name="visit_date" type="date"><p class="err" data-f="visit_date" role="alert"></p></div>
+              <div class="fld"><label for="q_time">시간</label><select id="q_time" name="visit_time"><option value="">시간 선택</option></select><p class="err" data-f="visit_time" role="alert"></p></div>
+            </div>
+          </div>
+          <div class="hp" aria-hidden="true"><label>웹사이트<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="consent">
+            <label class="chk"><input type="checkbox" id="q_consent" name="consent"><span>[필수] 개인정보 수집·이용 동의</span></label>
+            <button type="button" class="link js-privacy">보기</button>
+            <p class="err" data-f="consent" role="alert"></p>
+          </div>
+          <button class="btn btn--navy btn--block js-submit" type="submit">관심고객 등록하기</button>
+          <p class="err err--form" data-f="form" role="alert"></p>
+        </form>
+        <a class="form__tel js-call" href="#register" data-call-label="phone">분양문의 <b class="js-phone-text">1688-6189</b></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 · 핵심가치 -->
+  <section class="sec" id="benefit" data-section="benefit" aria-labelledby="benefitTitle">
+    <div class="wrap">
+      <div class="sec__head"><p class="sec__eyebrow">PREMIUM</p>
+      <h2 class="sec__title" id="benefitTitle">아크원 푸르지오 핵심가치</h2></div>
+      <ul class="bnf" id="benefitCards">
+        <li class="bnf__item bnf__item--key"><span class="bnf__k">푸르지오 브랜드 타운</span><strong class="bnf__v">2,911세대</strong></li>
+        <li class="bnf__item bnf__item--key"><span class="bnf__k">7호선 국제업무단지역 <small>(예정)</small></span><strong class="bnf__v">도보 약 7분</strong></li>
+        <li class="bnf__item"><span class="bnf__k">랜드마크</span><strong class="bnf__v">최고 49층</strong><small>오피스텔동 기준</small></li>
+        <li class="bnf__item"><span class="bnf__k">주차</span><strong class="bnf__v">3,124대</strong><small>아파트 세대당 1.6대</small></li>
+        <li class="bnf__item"><span class="bnf__k">설계</span><strong class="bnf__v">판상형 4Bay</strong><small>팬트리·드레스룸</small></li>
+      </ul>
+      <p class="note" id="benefitNote">※ 2,911세대는 아크원 푸르지오(1,855세대)와 인접 B1블록 청라 피크원 푸르지오(1,056실)를 합한 규모입니다. 역까지 거리는 사업지 기준 추정치이며, 7호선 연장선은 공사 중인 예정 노선입니다.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 03 · 사업안내 -->
+  <section class="sec sec--soft" id="complex" data-section="complex" aria-labelledby="complexTitle">
+    <div class="wrap">
+      <div class="sec__head"><p class="sec__eyebrow">COMPLEX</p>
+      <h2 class="sec__title" id="complexTitle">청라 아크원 푸르지오</h2>
+      <p class="sec__desc">청라국제도시 국제업무단지 M5블록에 들어서는 대우건설 푸르지오 주거복합 단지입니다.</p></div>
+      <ul class="stat" aria-label="단지 규모">
+        <li><b>1,855<small>세대</small></b><span>아파트 868 · 오피스텔 987</span></li>
+        <li><b>868<small>세대</small></b><span>아파트 84·103㎡</span></li>
+        <li><b>49<small>층</small></b><span>지하 5층~지상 최고 49층</span></li>
+        <li><b>2031<small>년 8월</small></b><span>입주 예정</span></li>
+      </ul>
+      <dl class="facts" id="facts">
+                <div class="facts__row"><dt>공급위치</dt><dd>인천광역시 서해구 청라동 86-1번지 (청라국제업무단지 M5BL)</dd></div>
+        <div class="facts__row"><dt>시행</dt><dd>(주)청라스마트시티</dd></div>
+        <div class="facts__row"><dt>시공</dt><dd>(주)대우건설</dd></div>
+        <div class="facts__row"><dt>용도지역</dt><dd>중심상업지역 · 지구단위계획구역 · 경제자유구역</dd></div>
+        <div class="facts__row"><dt>건축규모</dt><dd>아파트 지하 5층~지상 44층 3개 동(201~203동) · 오피스텔 최고 49층 3개 동(301~303동)</dd></div>
+        <div class="facts__row"><dt>공급규모</dt><dd>아파트 868세대 + 오피스텔 987실 (총 1,855세대)</dd></div>
+        <div class="facts__row"><dt>주택형</dt><dd>아파트 84㎡(620세대) · 103㎡(248세대) / 오피스텔 987실</dd></div>
+        <div class="facts__row"><dt>대지·연면적</dt><dd>대지 약 10,680평 · 연면적 약 128,500평</dd></div>
+        <div class="facts__row"><dt>주차</dt><dd>총 3,124대 (아파트 1,389대 · 오피스텔 1,695대 · 상가 40대)</dd></div>
+        <div class="facts__row"><dt>입주예정</dt><dd>2031년 8월 예정 (정확한 입주일은 추후 통보)</dd></div>
+      </dl>
+
+      <div class="site" id="site">
+        <div class="site__text">
+          <h3 class="sub__title">단지배치도</h3>
+          <p>아파트 201~203동과 오피스텔 301~303동, 잔디광장·포레스트 북가든·리빙가든·펫파크 등 테마 조경으로 구성됩니다.</p>
+        </div>
+        <figure class="fig fig--site js-zoom" data-hires="assets/img/siteplan.webp"><img src="assets/img/siteplan-900.webp" srcset="assets/img/siteplan-900.webp 900w, assets/img/siteplan.webp 1600w" sizes="(max-width:1023px) 100vw, 760px" width="1600" height="1118" alt="청라 아크원 푸르지오 단지배치도" loading="lazy" decoding="async"></figure>
+      </div>
+      <div class="comm">
+        <h3 class="sub__title">조경</h3>
+        <div class="comm__grid comm__grid--4">
+          <figure class="fig"><img src="assets/img/land-1.webp" width="1052" height="452" alt="단지 조경 이미지컷" loading="lazy" decoding="async"></figure>
+          <figure class="fig"><img src="assets/img/land-2.webp" width="1052" height="452" alt="단지 조경 이미지컷" loading="lazy" decoding="async"></figure>
+          <figure class="fig"><img src="assets/img/land-3.webp" width="1052" height="452" alt="단지 조경 이미지컷" loading="lazy" decoding="async"></figure>
+          <figure class="fig"><img src="assets/img/land-4.webp" width="1052" height="446" alt="단지 조경 이미지컷" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+      <div class="comm">
+        <h3 class="sub__title">커뮤니티 <small>GREENERY LOUNGE</small></h3>
+        <div class="comm__grid">
+          <figure class="fig"><img src="assets/img/comm-fitness.webp" width="1200" height="567" alt="피트니스클럽 이미지컷" loading="lazy" decoding="async"><figcaption>B1 그리너리 스포츠 · 피트니스클럽 / GX룸 / 골프클럽·스크린골프 / 사우나</figcaption></figure>
+          <figure class="fig"><img src="assets/img/comm-pet.webp" width="995" height="525" alt="1층 그리너리 컬처 이미지컷" loading="lazy" decoding="async"><figcaption>1F 그리너리 컬처 · 독서실 / 공유오피스 / 키즈카페 / 작은도서관 / 펫라운지 등</figcaption></figure>
+        </div>
+        <ul class="comm__list">
+          <li><b>B1 그리너리 스포츠</b>골프클럽 · 스크린골프 · 피트니스클럽 · GX룸 · 사우나(남/여)</li>
+          <li><b>1F 그리너리 컬처</b>독서실·오픈독서실 · 공유오피스 · 멀티룸 · 맘스라운지 · 공유주방 · 컬처라운지(시네마룸, 악기연습실) · 그리너리 카페 · 런드리라운지 · 키즈카페 · 키즈스테이션 · 작은도서관 · 어린이집 · 다함께돌봄센터 · 펫라운지 · 시니어클럽</li>
+          <li><b>2F 그리너리 스테이 &amp; 카페</b>그리너리 카페 · 게스트하우스</li>
+        </ul>
+        <p class="note">※ 아파트와 오피스텔이 함께 조성된 단지로, 부대복리시설은 아파트·오피스텔 입주자가 공동으로 사용합니다.</p>
+      </div>
+
+      <div class="brand">
+        <p class="brand__logo">PRUGIO</p>
+        <p class="brand__text">아크원(ARK-ONE)은 ‘ABSOLUTE REMARKABLE ONE’, 청라의 절대적 기준이 될 단 하나의 주거명작을 뜻합니다. 푸르지오는 대우건설의 아파트 브랜드로, 인접 B1블록 청라 피크원 푸르지오와 함께 푸르지오 타운을 이룹니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 · 입지환경 -->
+  <section class="sec" id="location" data-section="location" aria-labelledby="locTitle">
+    <div class="wrap">
+      <div class="sec__head"><p class="sec__eyebrow">LOCATION</p>
+      <h2 class="sec__title" id="locTitle">청라국제업무단지 중심 생활권</h2>
+      <p class="sec__desc">청라 1·2단계 입주 이후 국제업무단지에서 이어지는 신규 주거 공급입니다.</p></div>
+      <div class="loc" id="locBody">
+        <div class="loc__grp">
+          <h3>교통</h3>
+          <div class="loc__item"><b>서울 7호선 청라연장선 국제업무단지역 <em>예정</em></b><span>석남역~국제업무단지역 2030년 1차 개통 목표 · 사업지에서 도보 약 7분</span></div>
+          <div class="loc__item"><b>공항철도 청라국제도시역 · 9호선 직결 <em>계획</em></b><span>공항철도–서울 9호선 직결 시 마곡나루역 등 서울 서남권 연결</span></div>
+          <div class="loc__item"><b>청라하늘대교(제3연륙교)</b><span>2025년 12월 개통 · 영종도·인천국제공항 연결</span></div>
+          <div class="loc__item"><b>경인고속국도 지하화 <em>예정</em></b><span>남청라IC~신월여의지하도로로 여의도 접근 개선</span></div>
+                  </div>
+        <div class="loc__grp">
+          <h3>직장 · 생활 인프라</h3>
+          <div class="loc__item"><b>하나금융그룹 헤드쿼터</b><span>하나드림타운 3단계 그룹 헤드쿼터 2026년 완공·입주</span></div>
+          <div class="loc__item"><b>돔구장 &amp; 스타필드 청라 <em>예정</em></b><span>2028년 개장 예정</span></div>
+          <div class="loc__item"><b>서울아산청라병원 <em>예정</em></b><span>2029년 예정</span></div>
+          <div class="loc__item"><b>코스트코 청라 · 하나드림타운</b><span>생활·업무 인프라 인접</span></div>
+          <div class="loc__item"><b>영상문화복합단지 <em>계획</em> · 인천로봇랜드 <em>예정</em></b><span>영상문화복합단지 2031년 계획, 청라시티타워(계획) 등</span></div>
+        </div>
+        <div class="loc__grp">
+          <h3>교육 · 조망</h3>
+          <div class="loc__item"><b>초등학교 신설 <em>예정</em> · 중학교 신설 <em>계획</em></b><span>단지 앞 도보 약 5분 거리</span></div>
+          <div class="loc__item"><b>경연초 · 경연중 · 청라달튼외국인학교</b><span>도보 통학권</span></div>
+          <div class="loc__item"><b>오션 · 시티뷰 조망 특화</b><span>LDK 3면 개방 또는 거실 2면 개방 (일부 세대)</span></div>
+        </div>
+        <p class="loc__warn">※ 교통·개발 계획은 예정 사항으로 관계기관 사정에 따라 변경되거나 지연될 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 · 세대안내 -->
+  <section class="sec sec--soft" id="plan" data-section="plan" aria-labelledby="planTitle">
+    <div class="wrap">
+      <div class="sec__head"><p class="sec__eyebrow">UNIT PLAN</p>
+      <h2 class="sec__title" id="planTitle">세대안내</h2>
+      <p class="sec__desc">아파트 전용 84㎡ 4개 타입, 103㎡ 2개 타입 총 868세대로 구성됩니다.</p></div>
+
+      <div class="pp" id="pp-apt">
+        <div class="utbl-wrap">
+          <table class="utbl">
+            <thead><tr><th scope="col">타입</th><th scope="col">전용</th><th scope="col">공급</th><th scope="col">세대수</th><th scope="col">분양가</th></tr></thead>
+            <tbody><tr><th scope="row">84A</th><td>84.94㎡</td><td>122.22㎡</td><td>248</td><td>8억대~</td></tr><tr><th scope="row">84B</th><td>84.92㎡</td><td>121.66㎡</td><td>124</td><td>8억대~</td></tr><tr><th scope="row">84C</th><td>84.86㎡</td><td>120.29㎡</td><td>124</td><td>8억대~</td></tr><tr><th scope="row">84D</th><td>84.95㎡</td><td>121.91㎡</td><td>124</td><td>8억대~</td></tr><tr><th scope="row">103A</th><td>103.85㎡</td><td>147.04㎡</td><td>124</td><td>11억대~</td></tr><tr><th scope="row">103B</th><td>103.99㎡</td><td>148.20㎡</td><td>124</td><td>10억대~</td></tr></tbody>
+            <tfoot><tr><td>합계</td><td colspan="2">분양가상한제 적용</td><td>868</td><td>동·층별 상이</td></tr></tfoot>
+          </table>
+        </div>
+        <h3 class="sub__title pgrid__title">아파트 타입별 평면도 <small>확장형</small></h3>
+        <div class="pgrid"><figure class="fig pfig js-zoom" data-hires="assets/img/plan84a.webp"><img src="assets/img/plan84a.webp" width="1004" height="734" alt="84A 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>84A</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan84b.webp"><img src="assets/img/plan84b.webp" width="832" height="884" alt="84B 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>84B</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan84c.webp"><img src="assets/img/plan84c.webp" width="1024" height="668" alt="84C 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>84C</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan84d.webp"><img src="assets/img/plan84d.webp" width="1005" height="900" alt="84D 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>84D</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan103a.webp"><img src="assets/img/plan103a.webp" width="1127" height="745" alt="103A 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>103A</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan103b.webp"><img src="assets/img/plan103b.webp" width="1128" height="939" alt="103B 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>103B</b> 확장형 <span>크게 보기</span></figcaption></figure></div>
+        <p class="plan__opts"><b>기본 제공 특화</b> 3연동 자동중문 · 거실 아트월 세라믹 타일 · 광폭 강마루 · 거실 라인 간접등 · 거실 실링팬 · 스마트스위치 · 스마트욕실(욕실1) · 욕실 복합환풍기<br><b>유상 옵션</b> 라이프업 스타일링 · 수납 · 키친 · 바스 (계약 시 견본주택에서 확인)</p>
+      </div>
+
+      <p class="note">※ 면적은 소수점 둘째 자리까지 표기했습니다. 평면도는 확장형 기준 참고 자료로 실제와 차이가 있을 수 있습니다. 아파트 분양가는 입주자모집공고 기준 대략적인 가격대이며 동·층별로 다릅니다. 최종 면적은 입주자모집공고 및 계약서를 확인해 주시기 바랍니다.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 06 · 분양일정 -->
+  <section class="sec" id="terms" data-section="terms" aria-labelledby="termsTitle">
+    <div class="wrap wrap--mid">
+      <div class="sec__head"><p class="sec__eyebrow">SCHEDULE</p>
+      <h2 class="sec__title" id="termsTitle">아파트 분양일정</h2></div>
+      <div id="termsBody">
+        <div class="terms-block">
+          <h3 class="sub__title">아파트 청약 일정</h3>
+          <table class="sched">
+            <tbody>
+              <tr><th scope="row">견본주택 그랜드 오픈</th><td>2026.10.30 (금)</td></tr>
+              <tr><th scope="row">특별공급</th><td>2026.11.02 (월)</td></tr>
+              <tr><th scope="row">일반공급 1순위</th><td>2026.11.03 (화)</td></tr>
+              <tr><th scope="row">일반공급 2순위</th><td>2026.11.04 (수)</td></tr>
+              <tr><th scope="row">당첨자 발표</th><td>2026.11.10 (화)</td></tr>
+              <tr><th scope="row">서류접수</th><td>2026.11.12 (목) ~ 11.16 (월)</td></tr>
+              <tr><th scope="row">정당계약</th><td>2026.11.22 (일) ~ 11.24 (화)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="terms-block">
+          <h3 class="sub__title">아파트 분양조건</h3>
+          <table class="terms-table">
+            <tbody>
+              <tr><th scope="row">분양가</th><td>84㎡ 8억대~ · 103㎡ 10억대~ <span>분양가상한제 적용 · 동·층별 분양가는 상담 시 안내</span></td></tr>
+              <tr><th scope="row">계약금</th><td>5% <span>1차 1,000만 원(계약 시) + 2차 잔여분(계약 후 30일 이내)</span></td></tr>
+              <tr><th scope="row">중도금</th><td>60% 이자후불제 <span>6회 분할 · 2027.06 ~ 2030.12</span></td></tr>
+              <tr><th scope="row">잔금</th><td>35% <span>입주 시 (2031년 8월 예정)</span></td></tr>
+              <tr><th scope="row">전매제한</th><td>3년 <span>당첨자 발표일(2026.11.10)부터 · 거주의무 없음</span></td></tr>
+              <tr><th scope="row">발코니 확장</th><td>유상 <span>타입별 금액 상이 · 상담 시 안내</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="note">※ 청약은 청약홈(한국부동산원)에서 신청합니다. 최종 일정과 자격 조건은 입주자모집공고를 반드시 확인해 주시기 바랍니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07 · 관심고객 등록 -->
+  <section class="sec sec--navy" id="register" data-section="register" aria-labelledby="regTitle">
+    <div class="wrap reg">
+      <div class="reg__info">
+        <p class="sec__eyebrow sec__eyebrow--gold">MODEL HOUSE</p>
+        <h2 class="sec__title sec__title--light" id="regTitle">관심고객 등록</h2>
+        <p class="reg__lead">견본주택 : 인천광역시 서해구 청라동 87-1번지<br>10월 30일(금) 그랜드 오픈 · 방문 전 예약하시면 담당자가 안내해 드립니다.</p>
+        <ol class="reg__steps">
+          <li><b>01</b><span>관심고객 등록 또는 방문예약 신청</span></li>
+          <li><b>02</b><span>담당자가 개별 연락</span></li>
+          <li><b>03</b><span>상담 및 견본주택 관람 안내</span></li>
+        </ol>
+        <a class="reg__tel js-call" href="#register" data-call-label="phone">분양문의 <b class="js-phone-text">1688-6189</b></a>
+      </div>
+      <div class="reg__form">
+        <div class="card js-card" id="formCard">
+          <form id="leadForm" class="lead-form" novalidate autocomplete="on">
+            <div class="seg" role="radiogroup" aria-label="신청 유형">
+              <label><input type="radio" name="intent" value="consult" checked><span>상담 문의</span></label>
+              <label><input type="radio" name="intent" value="visit"><span>방문예약</span></label>
+            </div>
+            <div class="fld">
+              <label for="f_name">성함</label>
+              <input id="f_name" name="name" type="text" autocomplete="name" maxlength="30" placeholder="성함" required>
+              <p class="err" id="e_name" data-f="name" role="alert"></p>
+            </div>
+            <div class="fld">
+              <label for="f_phone">연락처</label>
+              <input id="f_phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="010-0000-0000" required>
+              <p class="err" id="e_phone" data-f="phone" role="alert"></p>
+            </div>
+            <div class="visit js-visit" id="visitBox" hidden>
+              <div class="visit__row">
+                <div class="fld"><label for="f_date">방문 희망일</label><input id="f_date" name="visit_date" type="date"><p class="err" id="e_visit_date" data-f="visit_date" role="alert"></p></div>
+                <div class="fld"><label for="f_time">시간</label><select id="f_time" name="visit_time"><option value="">시간 선택</option></select><p class="err" id="e_visit_time" data-f="visit_time" role="alert"></p></div>
+              </div>
+              <p class="hint">방문 일정은 담당자가 확인 후 연락드려 확정합니다.</p>
+            </div>
+            <div class="hp" aria-hidden="true"><label>웹사이트<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="consent">
+              <label class="chk"><input type="checkbox" id="f_consent" name="consent"><span>[필수] 개인정보 수집·이용 동의</span></label>
+              <button type="button" class="link js-privacy" id="openPrivacy">보기</button>
+              <p class="err" id="e_consent" data-f="consent" role="alert"></p>
+            </div>
+            <button class="btn btn--gold btn--block js-submit" type="submit" id="submitBtn">관심고객 등록하기</button>
+            <p class="err err--form" id="e_form" data-f="form" role="alert"></p>
+            <p class="hint hint--center">생년월일·주민등록번호 등은 수집하지 않습니다.</p>
+          </form>
+        </div>
+        <p class="reg__preview" id="previewNote" hidden></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <p class="ft__name"><span class="hd__logo">PRUGIO</span>청라 아크원 푸르지오</p>
+    <p class="ft__line" id="ftSite">현장 : 인천광역시 서해구 청라동 86-1번지 · 견본주택 : 인천광역시 서해구 청라동 87-1번지</p>
+    <p class="ft__line" id="ftBiz">시행 (주)청라스마트시티 · 시공 (주)대우건설</p>
+    <p class="ft__line">분양문의 <a class="js-call ft__tel" href="#register" data-call-label="phone"><span class="js-phone-text">1688-6189</span></a> · 담당 제갈 숙</p>
+    <p class="ft__links"><button type="button" class="link link--light js-privacy" id="openPrivacy2">개인정보 처리방침</button></p>
+    <p class="ft__disc" id="ftDisc">본 홈페이지의 이미지·CG·지도는 소비자의 이해를 돕기 위한 참고용이며 실제와 다를 수 있습니다. 분양가·면적·일정 등 세부 사항은 입주자모집공고 및 계약서를 통해 반드시 확인하시기 바랍니다.</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock" role="group" aria-label="빠른 문의">
+  <a class="dock__btn dock__btn--call js-call" href="#register" data-call-label="phone" aria-label="전화 문의"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>전화</span></a>
+  <a class="dock__btn dock__btn--visit" href="#quickCard" id="dockVisit">관심고객 등록하기</a>
+</div>
+
+<dialog class="dlg" id="privacyDlg" aria-labelledby="privacyTitle">
+  <div class="dlg__box">
+    <h2 id="privacyTitle">개인정보 수집·이용 안내</h2>
+    <div id="privacyBody" class="dlg__body"></div>
+    <button type="button" class="btn btn--navy btn--block" id="closePrivacy">닫기</button>
+  </div>
+</dialog>
+
+<dialog class="lb" id="lightbox" aria-label="평면도 확대 보기">
+  <div class="lb__bar">
+    <button type="button" id="lbOut" aria-label="축소">−</button>
+    <button type="button" id="lbReset" aria-label="원래 크기">원래대로</button>
+    <button type="button" id="lbIn" aria-label="확대">+</button>
+    <button type="button" id="lbClose" class="lb__close" aria-label="닫기">닫기</button>
+  </div>
+  <div class="lb__stage" id="lbStage"><img id="lbImg" alt="" draggable="false"></div>
+</dialog>
+
+<noscript><p style="padding:16px;text-align:center">신청서 제출 등 일부 기능은 자바스크립트가 필요합니다.</p></noscript>
+<script>window.__PREVIEW__=false;window.__CONFIG__={phone:"1688-6189",leadEnabled:true,tracking:{},privacy:{operator:"청라 아크원 푸르지오 분양상담 (담당 제갈 숙)",contact:"1688-6189",retention:"수집일로부터 1년 또는 동의 철회 시까지 (기간 경과 시 지체 없이 파기)",version:"v1"},times:["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"]};</script>
+<script src="app.js"></script>
+<dialog class="pop" id="promoPop" aria-labelledby="popTitle">
+  <div class="pop__visual" aria-hidden="true">
+    <div class="pop__card">
+      <span class="pop__card-top">ANNUAL MEMBERSHIP</span>
+      <span class="pop__card-name">GOLD STAR</span>
+      <span class="pop__card-chip"></span>
+      <span class="pop__card-foot">코스트코 골드스타 연간회원권</span>
+    </div>
+    <span class="pop__badge">총<b>1,000</b>명</span>
+  </div>
+  <div class="pop__box">
+    <p class="pop__eyebrow">SPECIAL EVENT</p>
+    <h2 id="popTitle" tabindex="-1" autofocus>청약 당첨 여부와 관계없이<br><em>코스트코 골드스타 연간회원권</em> 증정</h2>
+    <p class="pop__lead">청라 아크원 푸르지오에 청약하신 고객님께 총 1,000명 한정으로 드립니다.</p>
+    <p class="pop__fine">(청약 후 당첨자 서류접수 기간 내(11/12~14) 견본주택 방문 인증 고객 한정)</p>
+    <a class="btn btn--gold btn--block" href="#register" id="popCta">관심고객 등록하고 혜택 안내받기</a>
+    <a class="pop__tel" href="tel:16886189">분양문의 <b>1688-6189</b></a>
+  </div>
+  <div class="pop__bar">
+    <button type="button" id="popToday">오늘 하루 보지 않기</button>
+    <button type="button" id="popClose">닫기</button>
+  </div>
+</dialog>
+<script>
+(function(){
+  var d=document.getElementById('promoPop'); if(!d||!d.showModal) return;
+  var key='arkone_pop_hide_v2', today=new Date().toISOString().slice(0,10);
+  try{ if(!/[?&]pop=1/.test(location.search) && localStorage.getItem(key)===today) return; }catch(e){}
+  function close(){ d.close(); }
+  document.getElementById('popClose').addEventListener('click',close);
+  document.getElementById('popToday').addEventListener('click',function(){ try{localStorage.setItem(key,today);}catch(e){} close(); });
+  document.getElementById('popCta').addEventListener('click',function(){
+    close();
+    setTimeout(function(){ var n=document.getElementById('f_name'); if(n) n.focus({preventScroll:true}); },500);
+  });
+  d.addEventListener('click',function(e){ if(e.target===d) close(); });
+  setTimeout(function(){ d.showModal(); },600);
+})();
+</script>
+
+</body>
+</html>
