@@ -27,7 +27,9 @@ async function sendSms(env, messages) {
     body: JSON.stringify({ messages }),
   });
   const body = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(`solapi ${res.status} ${JSON.stringify(body).slice(0, 300)}`);
+  if (!res.ok) throw new Error(`solapi ${res.status} ${body.errorCode || ''} ${body.errorMessage || ''}`.trim());
+  const failed = (body.failedMessageList || [])[0];
+  if (failed) throw new Error(`solapi ${failed.statusCode || ''} ${failed.statusMessage || ''}`.trim());
   return body;
 }
 
@@ -72,15 +74,35 @@ async function handleLead(request, env) {
     if (messages.length) await sendSms(env, messages);
   } catch (e) {
     console.error(e);
-    return json({ ok: false, error: 'send_failed' }, 502);
+    const why = !env.SOLAPI_API_KEY || !env.SOLAPI_API_SECRET ? '솔라피 키 미설정' : !from ? '발신번호 미설정' : String(e.message).slice(0, 120);
+    return json({ ok: false, error: 'send_failed', message: `신청이 저장되지 않았습니다. 전화로 문의해 주세요. (${why})` }, 502);
   }
   return json({ ok: true, duplicate: false, event_id: eventId, intent });
+}
+
+async function health(env) {
+  const out = {
+    worker: 'ok',
+    SOLAPI_API_KEY: !!env.SOLAPI_API_KEY, SOLAPI_API_SECRET: !!env.SOLAPI_API_SECRET,
+    SOLAPI_SENDER: digits(env.SOLAPI_SENDER).replace(/^(\d{3})\d+(\d{4})$/, '$1****$2'),
+    NOTIFY_TO: String(env.NOTIFY_TO || '').split(',').map(digits).filter(Boolean).length + '개',
+    CUSTOMER_SMS: env.CUSTOMER_SMS || 'off',
+  };
+  if (env.SOLAPI_API_KEY && env.SOLAPI_API_SECRET) {
+    try {
+      const r = await fetch('https://api.solapi.com/cash/v1/balance', { headers: { Authorization: await solapiAuth(env.SOLAPI_API_KEY, env.SOLAPI_API_SECRET) } });
+      const b = await r.json().catch(() => ({}));
+      out.solapi = r.ok ? `연결 OK (잔액 ${b.balance ?? '?'}원, 포인트 ${b.point ?? '?'})` : `연결 실패 ${r.status} ${b.errorCode || ''} ${b.errorMessage || ''}`;
+    } catch (e) { out.solapi = '연결 실패 ' + e.message; }
+  }
+  return json(out);
 }
 
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/lead') return request.method === 'POST' ? handleLead(request, env) : json({ ok: false }, 405);
+    if (pathname === '/api/health') return health(env); // 설정 점검용: 문자는 보내지 않고 키·번호 설정과 솔라피 잔액 조회만
     if (pathname === '/api/track') return new Response(null, { status: 204 }); // 방문 통계 비콘 자리 — 지금은 저장하지 않음
     return env.ASSETS.fetch(request);
   },

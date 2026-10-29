@@ -2,7 +2,7 @@
   "name": "arkone",
   "main": "src/worker.js",
   "compatibility_date": "2025-09-01",
-  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  "assets": { "directory": "./public", "binding": "ASSETS" },
   // 공개해도 되는 값만 여기에. API Key·Secret·알림 받을 번호는 대시보드 Secret으로
   "vars": { "CUSTOMER_SMS": "off" },
   "keep_vars": true
