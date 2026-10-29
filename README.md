@@ -8,8 +8,8 @@ Cloudflare > Workers & Pages > arkone > Settings > Variables and Secrets (모두
 |---|---|
 | SOLAPI_API_KEY | 솔라피 콘솔 > API Key |
 | SOLAPI_API_SECRET | 솔라피 콘솔 > API Secret |
-| SOLAPI_SENDER | 솔라피에 등록된 발신번호 |
 | NOTIFY_TO | 접수 알림 받을 번호 (쉼표로 여러 개) |
-| CUSTOMER_SMS | `on` 이면 고객에게 접수 확인 문자 발송 |
 
 배포 설정은 `wrangler.jsonc`.
+
+발신번호(SOLAPI_SENDER)와 고객 확인 문자(CUSTOMER_SMS)는 `wrangler.jsonc`의 vars에 있음.

@@ -3,6 +3,7 @@
   "main": "src/worker.js",
   "compatibility_date": "2025-09-01",
   "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
-  // 대시보드에서 넣은 변수를 배포 때 지우지 않도록
+  // 공개해도 되는 값만 여기에. API Key·Secret·알림 받을 번호는 대시보드 Secret으로
+  "vars": { "SOLAPI_SENDER": "16886189", "CUSTOMER_SMS": "on" },
   "keep_vars": true
 }
