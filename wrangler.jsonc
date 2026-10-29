@@ -5,5 +5,8 @@
   "assets": { "directory": "./public", "binding": "ASSETS" },
   // 공개해도 되는 값만 여기에. API Key·Secret·알림 받을 번호는 대시보드 Secret으로
   "vars": { "CUSTOMER_SMS": "off" },
-  "keep_vars": true
+  "keep_vars": true,
+  // 접수 내역·방문 통계 저장소 (무료 플랜에서 쓸 수 있는 SQLite 방식)
+  "durable_objects": { "bindings": [{ "name": "STORE", "class_name": "Store" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Store"] }]
 }
