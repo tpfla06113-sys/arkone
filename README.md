@@ -12,4 +12,4 @@ Cloudflare > Workers & Pages > arkone > Settings > Variables and Secrets (모두
 
 배포 설정은 `wrangler.jsonc`.
 
-발신번호(SOLAPI_SENDER)와 고객 확인 문자(CUSTOMER_SMS)는 `wrangler.jsonc`의 vars에 있음.
+고객 확인 문자(CUSTOMER_SMS)는 `wrangler.jsonc`의 vars에 있음. 발신번호 SOLAPI_SENDER를 따로 넣지 않으면 NOTIFY_TO 첫 번호로 발송.

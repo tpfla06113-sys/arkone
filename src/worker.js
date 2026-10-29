@@ -1,7 +1,7 @@
 // 관심고객 등록 → 솔라피 문자 발송 (Cloudflare Worker). 화면 파일은 public/ 에서 그대로 제공
 // 비밀값은 Cloudflare 대시보드 > Settings > Variables and Secrets(Secret)에만 저장. 페이지 코드에는 넣지 않음.
 //   SOLAPI_API_KEY, SOLAPI_API_SECRET : 솔라피 콘솔 > API Key 관리
-//   SOLAPI_SENDER  : 솔라피에 등록된 발신번호 (예: 16886189)
+//   SOLAPI_SENDER  : 솔라피에 등록된 발신번호 (비우면 NOTIFY_TO 첫 번호)
 //   NOTIFY_TO      : 접수 알림 받을 번호, 여러 개면 쉼표 (예: 01012345678,01098765432)
 //   CUSTOMER_SMS   : "on" 이면 고객에게도 접수 확인 문자 발송
 const SITE = '청라 아크원 푸르지오';
@@ -48,12 +48,13 @@ async function handleLead(request, env) {
   if (intent === 'visit' && !p.visit_date) fields.visit_date = '방문 희망일을 선택해 주세요.';
   if (Object.keys(fields).length) return json({ ok: false, fields }, 422);
 
-  const from = digits(env.SOLAPI_SENDER);
+  const notify = String(env.NOTIFY_TO || '').split(',').map(digits).filter(Boolean);
+  const from = digits(env.SOLAPI_SENDER) || notify[0]; // 발신번호를 따로 안 넣으면 알림 받는 번호(솔라피 등록 번호)로 발송
   const visit = intent === 'visit' ? `${p.visit_date} ${p.visit_time || ''}`.trim() : '';
   const fmt = phone.replace(/^(\d{3})(\d{3,4})(\d{4})$/, '$1-$2-$3');
   const kst = new Date(Date.now() + 9 * 3600e3).toISOString().slice(5, 16).replace('T', ' ');
 
-  const messages = String(env.NOTIFY_TO || '').split(',').map(digits).filter(Boolean).map((to) => ({
+  const messages = notify.map((to) => ({
     to, from,
     text: `[${SITE}] ${intent === 'visit' ? '방문예약' : '상담문의'} 접수\n성함: ${name}\n연락처: ${fmt}${visit ? `\n방문: ${visit}` : ''}\n접수: ${kst}`,
   }));
