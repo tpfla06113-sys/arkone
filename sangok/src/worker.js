@@ -9,7 +9,7 @@ import { adminPage, leadsCsv, loginPage, noPasswordPage } from './admin.js';
 export { Store } from './store.js';
 
 const SITE = '산곡역자이힐스테이트&하늘채';
-const TEL = '1833-2563';
+const TEL = '1688-8149';
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json; charset=utf-8' } });
