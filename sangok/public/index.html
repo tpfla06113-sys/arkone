@@ -14,6 +14,7 @@
 <link rel="preload" as="image" href="assets/img/hero-m.webp" media="(max-width:767px)">
 <meta property="og:image" content="assets/img/hero.webp">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="sangok.css">
 <style>
 .pv-note{background:#F3F0E6;color:#5B4A1E;font:500 12.5px/1.5 "OJR Sans",system-ui,sans-serif;text-align:center;padding:6px max(16px,env(safe-area-inset-left,0px))}@media (min-width:1024px){.pv-note{position:fixed;left:0;right:0;bottom:0;z-index:50}}
 .hd__logo{display:none}
@@ -39,6 +40,7 @@
       <a href="#complex" data-nav="complex">사업안내</a>
       <a href="#benefit" data-nav="benefit">핵심가치</a>
       <a href="#location" data-nav="location">입지환경</a>
+      <a href="#community" data-nav="community">커뮤니티</a>
       <a href="#plan" data-nav="plan">세대안내</a>
       <a href="#terms" data-nav="terms">분양조건</a>
     </nav>
@@ -52,6 +54,7 @@
     <picture class="hero__photo">
       <source media="(max-width:767px)" srcset="assets/img/hero-m.webp" width="620" height="618">
       <img class="hero__img" src="assets/img/hero.webp" width="1100" height="618" alt="산곡역자이힐스테이트&amp;하늘채 투시도" fetchpriority="high" decoding="async">
+      <img class="hero__slide" src="assets/img/complex.webp" width="1028" height="660" alt="" aria-hidden="true" decoding="async">
     </picture>
     <div class="hero__in">
       <div class="hero__copy">
@@ -104,13 +107,27 @@
     </div>
   </section>
 
+  <!-- CORE VALUE · 공식 메인 이미지 -->
+  <section class="core" aria-label="핵심가치 슬라이드">
+    <div class="core__track" id="coreTrack">
+      <figure class="core__slide"><picture><source media="(max-width:767px)" srcset="assets/img/core1-m.webp"><img src="assets/img/core1.webp" width="1920" height="1080" alt="자이의 시선으로 부러움을 마주하다, 산곡역자이힐스테이트&amp;하늘채" loading="eager" decoding="async"></picture></figure>
+      <figure class="core__slide"><picture><source media="(max-width:767px)" srcset="assets/img/core2-m.webp"><img src="assets/img/core2.webp" width="1920" height="1080" alt="7호선 산곡역 역세권, 산곡역 5·6번 출구 바로 앞" loading="lazy" decoding="async"></picture></figure>
+      <figure class="core__slide"><picture><source media="(max-width:767px)" srcset="assets/img/core3-m.webp"><img src="assets/img/core3.webp" width="1920" height="1080" alt="더블 초품아의 안심 등굣길" loading="lazy" decoding="async"></picture></figure>
+      <figure class="core__slide"><picture><source media="(max-width:767px)" srcset="assets/img/core4-m.webp"><img src="assets/img/core4.webp" width="1920" height="1080" alt="한걸음에 누리는 힐링 라이프" loading="lazy" decoding="async"></picture></figure>
+      <figure class="core__slide"><picture><source media="(max-width:767px)" srcset="assets/img/core5-m.webp"><img src="assets/img/core5.webp" width="1920" height="1080" alt="더 눈부시게 빛나는 미래가치" loading="lazy" decoding="async"></picture></figure>
+    </div>
+    <button type="button" class="core__nav core__nav--prev" id="corePrev" aria-label="이전">‹</button>
+    <button type="button" class="core__nav core__nav--next" id="coreNext" aria-label="다음">›</button>
+    <div class="core__bar" id="coreDots"></div>
+  </section>
+
   <!-- SECTION 02 · 핵심가치 -->
-  <section class="sec" id="benefit" data-section="benefit" aria-labelledby="benefitTitle">
+  <section class="sec sec--deep" id="benefit" data-section="benefit" aria-labelledby="benefitTitle">
     <div class="wrap">
       <div class="sec__head"><p class="sec__eyebrow">PREMIUM</p>
       <h2 class="sec__title" id="benefitTitle">산곡역자이힐스테이트&amp;하늘채 핵심가치</h2></div>
       <ul class="bnf" id="benefitCards">
-        <li class="bnf__item bnf__item--key"><span class="bnf__k">부평 대단지</span><strong class="bnf__v">2,706세대</strong></li>
+        <li class="bnf__item bnf__item--key"><span class="bnf__k">부평 대단지</span><strong class="bnf__v"><span data-count="2706">2,706</span>세대</strong></li>
         <li class="bnf__item bnf__item--key"><span class="bnf__k">7호선 산곡역</span><strong class="bnf__v">5·6번 출구 앞</strong></li>
         <li class="bnf__item"><span class="bnf__k">브랜드</span><strong class="bnf__v">3사 컨소시엄</strong><small>자이·힐스테이트·하늘채</small></li>
         <li class="bnf__item"><span class="bnf__k">단지설계</span><strong class="bnf__v">공원형 단지</strong><small>지상 차 없는 단지·중앙광장</small></li>
@@ -119,6 +136,11 @@
     </div>
   </section>
 
+  <div class="band">
+    <img src="assets/img/scale.webp" width="1100" height="480" alt="산곡역자이힐스테이트&amp;하늘채 단지 투시도" loading="lazy" decoding="async">
+    <div class="band__copy"><p>BRAND TOWN</p><h2>차원이 다른 스케일로<br>남다른 자부심을 누리다</h2><span>자이와 힐스테이트, 하늘채가 짓는 총 2,706세대</span></div>
+  </div>
+
   <!-- SECTION 03 · 사업안내 -->
   <section class="sec sec--soft" id="complex" data-section="complex" aria-labelledby="complexTitle">
     <div class="wrap">
@@ -126,9 +148,9 @@
       <h2 class="sec__title" id="complexTitle">산곡역자이힐스테이트&amp;하늘채</h2>
       <p class="sec__desc">인천 부평구 산곡6구역 주택재개발로 들어서는 2,706세대 대단지입니다.</p></div>
       <ul class="stat" aria-label="단지 규모">
-        <li><b>2,706<small>세대</small></b><span>총 세대수</span></li>
-        <li><b>1,289<small>세대</small></b><span>일반분양 전용 50~84㎡</span></li>
-        <li><b>33<small>층</small></b><span>지하 3층~지상 최고 33층 20개 동</span></li>
+        <li><b><em class="cnt" data-count="2706">2,706</em><small>세대</small></b><span>총 세대수</span></li>
+        <li><b><em class="cnt" data-count="1289">1,289</em><small>세대</small></b><span>일반분양 전용 50~84㎡</span></li>
+        <li><b><em class="cnt" data-count="33">33</em><small>층</small></b><span>지하 3층~지상 최고 33층 20개 동</span></li>
         <li><b>2029<small>년 12월</small></b><span>입주 예정</span></li>
       </ul>
       <dl class="facts" id="facts">
@@ -157,19 +179,47 @@
           <li><b>테마 조경</b>산소리마당 · 물소리마당 · 커뮤니티마당 · 어린이놀이터 · 주민운동시설</li>
         </ul>
       </div>
-      <div class="comm">
-        <h3 class="sub__title">커뮤니티</h3>
-        <p class="sec__desc">취향이 모이고 즐거움이 이어지는 스페셜 커뮤니티</p>
-        <div class="comm__grid">
-          <figure class="fig js-zoom" data-hires="assets/img/comm-map.webp"><img src="assets/img/comm-map.webp" width="1100" height="900" alt="커뮤니티 시설 배치 이미지" loading="lazy" decoding="async"><figcaption>커뮤니티 배치 (크게 보기)</figcaption></figure>
-          <figure class="fig js-zoom" data-hires="assets/img/comm-photo.webp"><img src="assets/img/comm-photo.webp" width="1100" height="1760" alt="커뮤니티 시설 이미지컷" loading="lazy" decoding="async" style="aspect-ratio:1100/900;object-fit:cover;object-position:top"><figcaption>시설 이미지컷 (크게 보기)</figcaption></figure>
-        </div>
-        <ul class="comm__list">
-          <li><b>스포츠</b>피트니스 · G·X룸(그룹필라테스) · 골프연습장 · 스크린골프 · 사우나</li>
-          <li><b>에듀</b>독서실(남/여) · 1인 독서실(남/여) · 작은도서관(교보문고) · 에듀홀</li>
-          <li><b>라이프</b>카페라운지 · 게스트하우스</li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- 커뮤니티 -->
+  <section class="sec" id="community" data-section="community" aria-labelledby="commTitle">
+    <div class="wrap">
+      <div class="sec__head"><p class="sec__eyebrow">COMMUNITY</p>
+      <h2 class="sec__title" id="commTitle">삶의 즐거움이 커지는<br>스페셜 커뮤니티</h2>
+      <p class="sec__desc">취향이 모이고 즐거움이 이어지는 커뮤니티에서 보다 건강하고 활기찬 일상을 만나보세요.</p></div>
+      <div class="cgal">
+          <figure class="cgal__item"><img src="assets/img/c-fitness.webp" width="420" height="251" alt="피트니스 이미지컷" loading="lazy" decoding="async"><figcaption>피트니스<small>건강한 일상을 위한 체력 단련 공간</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-golf.webp" width="420" height="251" alt="골프연습장 이미지컷" loading="lazy" decoding="async"><figcaption>골프연습장<small>스크린골프 시설을 갖춘 연습 공간</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-sauna.webp" width="420" height="251" alt="사우나 이미지컷" loading="lazy" decoding="async"><figcaption>사우나<small>휴식과 재충전의 리프레시 공간</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-study.webp" width="420" height="251" alt="1인 독서실 이미지컷" loading="lazy" decoding="async"><figcaption>1인 독서실<small>몰입도 높은 학습·업무 공간</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-library.webp" width="420" height="251" alt="작은도서관 이미지컷" loading="lazy" decoding="async"><figcaption>작은도서관<small>교보문고와 함께하는 도서관</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-guest.webp" width="420" height="251" alt="게스트하우스 이미지컷" loading="lazy" decoding="async"><figcaption>게스트하우스<small>친지·지인을 위한 프라이빗 공간</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-gx.webp" width="420" height="251" alt="G·X룸 이미지컷" loading="lazy" decoding="async"><figcaption>G·X룸<small>필라테스 전용 공간</small></figcaption></figure>
+          <figure class="cgal__item"><img src="assets/img/c-cafe.webp" width="420" height="251" alt="카페라운지 이미지컷" loading="lazy" decoding="async"><figcaption>카페라운지<small>커피 한 잔의 여유</small></figcaption></figure>
       </div>
+      <div class="site" style="margin-top:28px">
+        <div class="site__text">
+          <h3 class="sub__title">커뮤니티 배치</h3>
+          <ul class="comm__list">
+            <li><b>스포츠</b>피트니스 · G·X룸(그룹필라테스) · 골프연습장 · 스크린골프 · 사우나</li>
+            <li><b>에듀</b>독서실(남/여) · 1인 독서실(남/여) · 작은도서관(교보문고) · 에듀홀</li>
+            <li><b>라이프</b>카페라운지 · 게스트하우스</li>
+          </ul>
+        </div>
+        <figure class="fig js-zoom" data-hires="assets/img/comm-map.webp"><img src="assets/img/comm-map.webp" width="1100" height="900" alt="커뮤니티 시설 배치 이미지" loading="lazy" decoding="async"></figure>
+      </div>
+
+      <h3 class="sub__title" style="margin-top:44px">스마트 시스템</h3>
+      <div class="tabs" role="tablist" aria-label="시스템 종류">
+        <button type="button" role="tab" aria-selected="true" aria-controls="sysPanel" data-sys="smart">스마트 &amp; 안전</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="sysPanel" data-sys="energy">에너지</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="sysPanel" data-sys="convenience">편의</button>
+      </div>
+      <div class="tabpanel" id="sysPanel" role="tabpanel">
+        <figure class="fig js-zoom" data-hires="assets/img/sys-smart.webp" id="sysFig"><img id="sysImg" src="assets/img/sys-smart.webp" width="1100" height="915" alt="스마트 &amp; 안전 시스템" loading="lazy" decoding="async"></figure>
+      </div>
+      <p class="note">※ 시스템 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.</p>
     </div>
   </section>
 
@@ -223,7 +273,22 @@
         </div>
         <h3 class="sub__title pgrid__title">타입별 평면도 <small>확장형</small></h3>
         <div class="pgrid"><figure class="fig pfig js-zoom" data-hires="assets/img/plan50a.webp"><img src="assets/img/plan50a-t.webp" alt="50A 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>50A</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan50b.webp"><img src="assets/img/plan50b-t.webp" alt="50B 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>50B</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan59a.webp"><img src="assets/img/plan59a-t.webp" alt="59A 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>59A</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan59b.webp"><img src="assets/img/plan59b-t.webp" alt="59B 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>59B</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan59c.webp"><img src="assets/img/plan59c-t.webp" alt="59C 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>59C</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan75a.webp"><img src="assets/img/plan75a-t.webp" alt="75A 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>75A</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan75b.webp"><img src="assets/img/plan75b-t.webp" alt="75B 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>75B</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan84a.webp"><img src="assets/img/plan84a-t.webp" alt="84A 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>84A</b> 확장형 <span>크게 보기</span></figcaption></figure><figure class="fig pfig js-zoom" data-hires="assets/img/plan84b.webp"><img src="assets/img/plan84b-t.webp" alt="84B 타입 평면도 (확장형)" loading="lazy" decoding="async"><figcaption><b>84B</b> 확장형 <span>크게 보기</span></figcaption></figure></div>
-        <div class="plan__opts"><b>계약고객 추가 무상제공품목 (Life-Up 특별혜택)</b><br>3구 인덕션(LG전자) · 천장형 시스템에어컨(LG전자, 1층 전체 / 2층 이상 거실+침실1) · 붙박이장(59㎡ 이상, 침실2 또는 침실3 중 1개소) · 현관 중문(3연동 자동중문) · 비데일체형 양변기(부부욕실 1개, 50㎡는 가족욕실 1개) · 식기세척기(LG전자)<br><small>※ 자세한 사항(제조사, 모델명, 공급 등)은 입주자모집공고를 참조하시고 견본주택에서 확인해 주시기 바랍니다.</small></div>
+        <div class="free">
+          <div>
+            <span class="free__badge">Life-Up 특별혜택</span>
+            <h3>계약고객 대상<br>추가 무상제공품목</h3>
+            <ul>
+              <li>3구 인덕션<small>LG전자</small></li>
+              <li>천장형 시스템에어컨<small>LG전자 · 1층 전체 / 2층 이상 거실+침실1</small></li>
+              <li>붙박이장<small>59㎡ 이상 · 침실2 또는 침실3 중 1개소</small></li>
+              <li>현관 중문<small>3연동 자동중문</small></li>
+              <li>비데일체형 양변기<small>부부욕실 1개 (50㎡ 가족욕실 1개)</small></li>
+              <li>식기세척기<small>LG전자</small></li>
+            </ul>
+            <p class="note">※ 자세한 사항(제조사, 모델명 등)은 입주자모집공고를 참조하시고 견본주택에서 확인해 주시기 바랍니다.</p>
+          </div>
+          <figure class="fig js-zoom" data-hires="assets/img/free-items.webp"><img src="assets/img/free-items.webp" width="1100" height="1552" alt="추가 무상제공품목 이미지" loading="lazy" decoding="async"></figure>
+        </div>
       </div>
 
       <p class="note">※ 평면도는 확장형 기준 참고 이미지이며, 크게 보기에서 기본형도 볼 수 있습니다. 공급면적은 주거전용+주거공용 기준입니다. 일반분양 세대수는 특별공급과 일반공급을 합한 수입니다. 분양가는 입주자모집공고 기준 대략적인 가격대이며 동·층별로 다릅니다. 최종 면적과 금액은 입주자모집공고 및 계약서를 확인해 주시기 바랍니다.</p>
@@ -252,6 +317,14 @@
       </div>
     </div>
   </section>
+
+  <div class="brands" aria-label="시공 브랜드">
+    <div class="wrap brands__row">
+      <div><b>Xi</b><span>GS건설</span></div>
+      <div><b>HILLSTATE</b><span>현대건설</span></div>
+      <div><b>하늘채</b><span>코오롱글로벌</span></div>
+    </div>
+  </div>
 
   <!-- SECTION 07 · 관심고객 등록 -->
   <section class="sec sec--navy" id="register" data-section="register" aria-labelledby="regTitle">
@@ -346,6 +419,7 @@
 <noscript><p style="padding:16px;text-align:center">신청서 제출 등 일부 기능은 자바스크립트가 필요합니다.</p></noscript>
 <script>window.__PREVIEW__=false;window.__CONFIG__={phone:"1688-8149",leadEnabled:true,tracking:{},privacy:{operator:"산곡역자이힐스테이트&하늘채 분양상담 (담당 제갈 숙)",contact:"1688-8149",retention:"수집일로부터 1년 또는 동의 철회 시까지 (기간 경과 시 지체 없이 파기)",version:"v1"},times:["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"]};</script>
 <script src="app.js"></script>
+<script src="sangok.js"></script>
 <dialog class="pop" id="promoPop" aria-labelledby="popTitle">
   <div class="pop__box">
     <p class="pop__eyebrow">VISIT RESERVATION</p>
