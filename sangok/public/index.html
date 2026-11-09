@@ -16,7 +16,17 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 .pv-note{background:#F3F0E6;color:#5B4A1E;font:500 12.5px/1.5 "OJR Sans",system-ui,sans-serif;text-align:center;padding:6px max(16px,env(safe-area-inset-left,0px))}@media (min-width:1024px){.pv-note{position:fixed;left:0;right:0;bottom:0;z-index:50}}
-.hd__logo{letter-spacing:.08em}
+.hd__logo{display:none}
+@media (max-width:1023px){
+  .hd__in{flex-wrap:wrap;height:auto;row-gap:0}
+  .hd__brand,.hd__tel{min-height:var(--hd-h)}
+  .hd__nav{display:flex;order:3;flex:1 0 100%;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--gut) * -1);padding:0 calc(var(--gut) - 10px);border-top:1px solid var(--line)}
+  .hd__nav::-webkit-scrollbar{display:none}
+  .hd__nav a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:-.03em}
+  .hd__nav a.is-on{color:var(--gold-d)}
+  html{scroll-padding-top:calc(var(--hd-h) + 52px)}
+}
+@media (min-width:768px) and (max-width:1023px){.hd__nav{justify-content:center}.hd__nav a{padding:0 18px;font-size:16px}}
 </style>
 </head>
 <body>
