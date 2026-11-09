@@ -86,3 +86,37 @@
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.rv--in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.hero__photo img,.hero__slide{animation:none}.hero__slide{opacity:0}}
+
+/* ── 간격·배치 정리 ── */
+.nw{white-space:nowrap}
+.core__slide{scroll-snap-stop:always}
+
+/* 입지 이미지: 두 장 높이 맞춤 */
+.locfig{display:grid;gap:12px;margin:0 0 28px}
+.locfig .fig{margin:0}
+@media (min-width:768px){.locfig{grid-template-columns:1.146fr 1.571fr;gap:16px}}
+
+/* 평면도: 휴대폰 2열, 태블릿 이상 3열 (9개가 딱 맞게) */
+.pgrid{grid-template-columns:1fr 1fr;gap:10px}
+@media (min-width:768px){.pgrid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media (max-width:767px){
+  .pgrid .pfig:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 5px);justify-self:center}
+  .pfig{padding:8px 8px 6px}
+  .pfig figcaption{font-size:12.5px}
+  .pfig figcaption b{font-size:14.5px}
+  .pfig figcaption span{display:none}
+}
+
+/* 스케일 밴드: 휴대폰에선 글을 사진 위 남색 띠로 */
+@media (max-width:767px){
+  .band__copy{position:static;background:#0B2240;padding:26px 20px 22px}
+  .band{display:flex;flex-direction:column-reverse}
+  .band img{height:auto;aspect-ratio:1100/435}
+}
+
+/* 무상품목 이미지: 휴대폰에선 숨김(내용 중복), 큰 화면에선 크기 제한 */
+@media (max-width:767px){.free .fig{display:none}}
+@media (min-width:768px){.free{grid-template-columns:1.25fr 1fr}.free .fig{max-width:380px;justify-self:end}}
+
+/* 핵심가치 작은 글씨 한 줄 */
+.sec--deep .bnf__item small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
