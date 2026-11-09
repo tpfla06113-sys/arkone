@@ -420,41 +420,6 @@
 <script>window.__PREVIEW__=false;window.__CONFIG__={phone:"1688-8149",leadEnabled:true,tracking:{},privacy:{operator:"산곡역자이힐스테이트&하늘채 분양상담 (담당 제갈 숙)",contact:"1688-8149",retention:"수집일로부터 1년 또는 동의 철회 시까지 (기간 경과 시 지체 없이 파기)",version:"v1"},times:["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"]};</script>
 <script src="app.js"></script>
 <script src="sangok.js"></script>
-<dialog class="pop" id="promoPop" aria-labelledby="popTitle">
-  <div class="pop__box">
-    <p class="pop__eyebrow">VISIT RESERVATION</p>
-    <h2 id="popTitle" tabindex="-1" autofocus>산곡역자이힐스테이트&amp;하늘채<br>견본주택 방문예약</h2>
-    <ul class="pop__list">
-      <li><b>규모</b>총 2,706세대 · 20개 동</li>
-      <li><b>타입</b>전용 50 · 59 · 75 · 84㎡</li>
-      <li><b>교통</b>7호선 산곡역 5·6번 출구 앞</li>
-      <li><b>문의</b>1688-8149</li>
-    </ul>
-    <a class="btn btn--gold btn--block" href="#register" id="popCta">방문예약 신청하기</a>
-    <a class="pop__tel" href="tel:16888149">분양문의 <b>1688-8149</b></a>
-  </div>
-  <div class="pop__bar">
-    <button type="button" id="popToday">오늘 하루 보지 않기</button>
-    <button type="button" id="popClose">닫기</button>
-  </div>
-</dialog>
-<script>
-(function(){
-  var d=document.getElementById('promoPop'); if(!d||!d.showModal) return;
-  var key='sangok_pop_hide_v1', today=new Date().toISOString().slice(0,10);
-  try{ if(!/[?&]pop=1/.test(location.search) && localStorage.getItem(key)===today) return; }catch(e){}
-  function close(){ d.close(); }
-  document.getElementById('popClose').addEventListener('click',close);
-  document.getElementById('popToday').addEventListener('click',function(){ try{localStorage.setItem(key,today);}catch(e){} close(); });
-  document.getElementById('popCta').addEventListener('click',function(){
-    close();
-    var v=document.querySelector('#leadForm input[value="visit"]'); if(v){ v.checked=true; v.dispatchEvent(new Event('change',{bubbles:true})); }
-    setTimeout(function(){ var n=document.getElementById('f_name'); if(n) n.focus({preventScroll:true}); },500);
-  });
-  d.addEventListener('click',function(e){ if(e.target===d) close(); });
-  setTimeout(function(){ d.showModal(); },600);
-})();
-</script>
 
 </body>
 </html>
